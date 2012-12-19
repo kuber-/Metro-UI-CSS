@@ -1,0 +1,133 @@
+/*
+ * Metro UI CSS
+ * Copyright 2012 Sergey Pimenov
+ * Licensed under the MIT Lilcense
+ *
+ * Grid.less
+ *
+ */
+
+.oh, .ot, .tt
+{
+    float:left;
+    margin:0 2% 2% 0;
+    width:48%
+}
+
+.ot
+{
+    width:31%
+}
+
+.tt{
+    width:65%
+}
+
+.cl{
+    clear:both
+}
+
+@mixin item-padding{
+    margin-right: $unit;
+    margin-bottom: $subunit;
+}
+
+.column-padding {
+    margin: 0 $unit/2;
+}
+.group-padding {
+    margin: 0 $unit*2;
+}
+
+$cellSize: 60px;
+$cellMargin: 20px;
+
+@mixin span1  {width: 60px;}
+@mixin span2  {width: 140px;}
+@mixin span3  {width: 220px;}
+@mixin span4  {width: 300px;}
+@mixin span5  {width: 380px;}
+@mixin span6  {width: 460px;}
+@mixin span7  {width: 540px;}
+@mixin span8  {width: 620px;}
+@mixin span9  {width: 700px;}
+@mixin span10 {width: 780px;}
+@mixin span11 {width: 860px;}
+@mixin span12 {width: 940px;}
+
+@mixin offset1 {margin-left: 80px;}
+@mixin offset2 {margin-left: 160px;}
+@mixin offset3 {margin-left: 240px;}
+@mixin offset4 {margin-left: 320px;}
+@mixin offset5 {margin-left: 400px;}
+@mixin offset6 {margin-left: 480px;}
+@mixin offset7 {margin-left: 560px;}
+@mixin offset8 {margin-left: 640px;}
+@mixin offset9 {margin-left: 720px;}
+@mixin offset10{margin-left: 800px;}
+@mixin offset11{margin-left: 880px;}
+@mixin offset12 {margin-left: 960px;}
+
+
+[class*="span"] {
+    float: none;
+    min-height: 1px;
+    @include item-padding;
+    @include clearfix;
+
+    &:last-child {
+        margin-right: 0;
+        //right: 0;
+    }
+
+    & > img {
+        max-width: 100%;
+        //width: 100%;
+        height: auto;
+        //max-height: 100%;
+    }
+}
+
+.grid {
+    margin: 0 0 20px;
+    display: block;
+    height: auto;
+    width: 100%;
+
+    &.no-margin {
+        margin: 0;
+    }
+    &.margin-row {
+        margin-bottom: $subunit;
+    }
+
+    & .grid {
+        margin-top: $subunit/2;
+        margin-bottom: $subunit/2;
+    }
+
+    .group {
+        margin-right: $unit * 4;
+        float: left;
+        width: auto;
+        height: auto;
+        min-height: 1px;
+    }
+
+    .row {
+        width: 100%;
+        @include clearfix;
+
+        [class*="span"] {
+            float: left;
+        }
+    }
+
+    &.element-border {
+        [class*="span"] {
+            border: 1px #ccc dotted;
+        }
+    }
+
+    @include clearfix;
+}
